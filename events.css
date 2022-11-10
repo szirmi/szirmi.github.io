@@ -1,0 +1,84 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family:'Courier New', Courier, monospace;
+}
+
+main {
+    position: relative;
+}
+.event-test::before {
+    content: attr(id);
+    position: absolute;
+    top: 0;
+    left: 0.2rem;
+    font-style: italic;
+    font-weight: bold;
+    color: #27aa15;
+    transition: color ease 500ms;
+}
+.event-test {
+    position: relative;
+    transition: transform ease 1600ms, border ease 500ms;
+    transform-style: preserve-3d;
+    border: 3px solid #ffffff00;
+    padding: 4rem 1rem 1rem 1rem;
+    text-align: center;
+    font-size: 2rem;
+}
+.event-test:hover {
+    background-color: #5103434d !important;
+}
+#first {
+    background-color: #000000;
+}
+#second {
+    background-color: #333333;
+}
+#third {
+    background-color: #666666;
+}
+#fourth {
+    display: flex;
+    gap: 2rem;
+    background-color: #999999;
+}
+#fifth,
+#sixth {
+    flex: 1;
+    background-color: #cccccc;
+}
+.visualize {
+    transform: perspective(900px) rotateX(70deg) rotateY(20deg) rotateZ(-45deg) translateX(100px) translateY(200px) translateZ(70px) scale(0.9);
+}
+.visualize .event-test {
+    transform: scale(0.9) translateZ(40px);
+}
+
+.event-test > .shadow-border,
+.event-test > .shadow-border-container {
+    position: absolute;
+    top: 4rem;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+}
+.shadow-border {
+    border: 3px dashed yellow;
+}
+.shadow-border-container {
+    display: flex;
+    gap: 2rem;
+}
+.shadow-border-container > .shadow-border {
+    flex: 1;
+}
+
+.propagation {
+    border-color: #c50c0c;
+}
+.propagation::before {
+    color: #c50c0c;
+}
