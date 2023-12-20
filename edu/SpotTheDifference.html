@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spot the Difference Worksheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="instructions">
+            <h2>Spot the Difference</h2>
+            <p>Find and write down 10 differences between the two images below.</p>
+        </div>
+<div>
+        <div class="image-grid">
+            <!-- Placeholder for the first set of images -->
+        </div>
+        <!-- Additional image grids can be added here -->
+</div>
+    </div>
+<script>
+    // Arrays to store the examples
+    var examplesSet1 = ['park_scene.png', 'zoo_scene.png', 'undersea_scene.png']; // Array for the first set of images
+    // ... Additional arrays can be added for more sets
+
+    // Function to dynamically add images to the worksheet
+    function addImagesToWorksheet() {
+        var imageGrid1 = document.querySelector('.image-grid:nth-of-type(1)');
+        // ... Selectors for additional image grids
+
+        // Adding images from examplesSet1 to the first image grid
+        examplesSet1.forEach(function(imagePath) {
+            var img = document.createElement('img');
+            img.src = imagePath;
+            img.alt = 'Spot the Difference Image';
+            imageGrid1.appendChild(img);
+        });
+
+        // ... Repeat for additional sets
+    }
+
+    // Calling the function to add images when the document is loaded
+    document.addEventListener('DOMContentLoaded', addImagesToWorksheet);
+</script>
+</body>
+</html>

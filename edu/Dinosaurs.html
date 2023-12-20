@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinosaur Labeling Worksheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .worksheet-title {
+            text-align: center;
+            font-size: 24px;
+        }
+        .instructions {
+            font-size: 16px;
+            text-align: center;
+            margin-top: 5px;
+        }
+        .dinosaur-section {
+            margin-top: 40px;
+	    position: relative;
+        }
+        .dinosaur-image {
+            width: 100%;
+            max-width: 500px;
+            display: block;
+            margin: 0 auto;
+        }
+        .label-area {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .label {
+            border: 1px solid #000;
+            padding: 5px;
+            margin: 5px;
+            width: 150px;
+            height: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: tenter;
+	    position: absolute;
+        }
+        .line {
+            border-bottom: 1px solid black;
+            position: absolute;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="worksheet-title">Dinosaur Labeling Worksheet</h1>
+        <p class="instructions">Label each part of the dinosaur in the fields provided.</p>
+
+        <!-- Spinosaurus Section -->
+        <div class="dinosaur-section" id="spinosaurus">
+            <img src="spinosaurus_image.png" alt="Spinosaurus" class="dinosaur-image">
+            <div class="label-area">
+                <!-- Add labels and lines for Spinosaurus -->
+                <div class="label">Sail</div>
+                <div class="label">Teeth</div>
+                <div class="label">Legs</div>
+                <!-- Lines can be added here with CSS or manually drawn if printed -->
+            </div>
+        </div>
+
+        <!-- Ankylosaurus Section -->
+        <div class="dinosaur-section" id="ankylosaurus">
+            <img src="ankylosaurus_image.png" alt="Ankylosaurus" class="dinosaur-image">
+            <div class="label-area">
+                <!-- Add labels and lines for Ankylosaurus -->
+                <div class="label">Armor Plates</div>
+                <div class="label">Club Tail</div>
+                <div class="label">Head</div>
+                <!-- Lines can be added here with CSS or manually drawn if printed -->
+            </div>
+        </div>
+
+        <!-- Parasaurolophus Section -->
+        <div class="dinosaur-section" id="parasaurolophus">
+            <img src="parasaurolophus_image.png" alt="Parasaurolophus" class="dinosaur-image">
+            <div class="label-area">
+                <!-- Add labels and lines for Parasaurolophus -->
+                <div class="label">Crest</div>
+                <div class="label">Beak</div>
+                <div class="label">Tail</div>
+                <!-- Lines can be added here with CSS or manually drawn if printed -->
+            </div>
+        </div>
+    </div>
+<script>
+        // Example data structure for labels and their positions
+const dinosaurs = [
+    {
+        name: 'Spinosaurus',
+        labels: [
+            { text: 'Sail', x: 100, y: 80 },
+            { text: 'Long Snout', x: 200, y: 180 },
+            { text: 'Sharp Teeth', x: 150, y: 130 },
+            { text: 'Front Limb', x: 120, y: 230 },
+            { text: 'Tail', x: 180, y: 280 }
+        ]
+    },
+    {
+        name: 'Ankylosaurus',
+        labels: [
+            { text: 'Armor Plates', x: 100, y: 110 },
+            { text: 'Club Tail', x: 200, y: 230 },
+            { text: 'Four Legs', x: 150, y: 150 },
+            { text: 'Small Head', x: 120, y: 70 },
+            { text: 'Back Spikes', x: 180, y: 190 }
+        ]
+    },
+    {
+        name: 'Parasaurolophus',
+        labels: [
+            { text: 'Crest', x: 100, y: 90 },
+            { text: 'Beak', x: 200, y: 150 },
+            { text: 'Front Leg', x: 150, y: 210 },
+            { text: 'Back Leg', x: 120, y: 270 },
+            { text: 'Tail', x: 180, y: 330 }
+        ]
+    }
+];
+
+        function createLabel(labelText, x, y, imageElement, container) {
+            // Create label div
+            const labelDiv = document.createElement('div');
+            labelDiv.classList.add('label');
+            labelDiv.textContent = labelText;
+
+            // Position label div
+            labelDiv.style.left = `${x}px`;
+            labelDiv.style.top = `${y}px`;
+
+            // Append label to the container
+            container.appendChild(labelDiv);
+
+            // Create and position the line
+            drawLine(x, y, imageElement, container);
+        }
+
+        function drawLine(x, y, imageElement, container) {
+            // Calculate line end points
+            const lineX1 = x + 10; // Adjust these values as needed
+            const lineY1 = y + 10; // Adjust these values as needed
+            const lineX2 = imageElement.offsetLeft + (imageElement.offsetWidth / 2);
+            const lineY2 = imageElement.offsetTop + (imageElement.offsetHeight / 2);
+
+            // Create line element
+            const line = document.createElement('div');
+            line.classList.add('line');
+            line.style.left = `${Math.min(lineX1, lineX2)}px`;
+            line.style.top = `${Math.min(lineY1, lineY2)}px`;
+            line.style.width = `${Math.abs(lineX1 - lineX2) + Math.round(Math.random() * 200 - 100)}px`;
+            line.style.height = `${Math.abs(lineY1 - lineY2)}px`;
+
+            // Append line to the container
+            container.appendChild(line);
+        }
+
+        function addLabelsToDinosaurs() {
+    dinosaurs.forEach(dino => {
+        const imageElement = document.querySelector(`img[alt="${dino.name}"]`);
+        const container = imageElement.parentElement;
+
+        dino.labels.forEach(label => {
+            createLabel(label.text, label.x, label.y, imageElement, container);
+        });
+    });
+}
+
+        // Call the function to add labels to the dinosaurs
+        addLabelsToDinosaurs();
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Fun with Numbers!</title>
+    <script>
+        // Example arrays
+var problems = [
+    "1 + 1", "2 + 2", "3 + 1", "4 + 1", "5 + 0", 
+    "1 + 3", "2 + 3", "3 + 3", "4 + 2", "5 + 1", 
+    "1 + 4", "2 + 4", "3 + 2", "4 + 3", "5 + 2", 
+    "1 + 5", "2 + 5", "3 + 4", "4 + 4", "5 + 3"
+];
+
+var images = [
+    "url1.jpg", "url2.jpg", "url3.jpg", "url4.jpg", "url5.jpg",
+    "url6.jpg", "url7.jpg", "url8.jpg", "url9.jpg", "url10.jpg",
+    "url11.jpg", "url12.jpg", "url13.jpg", "url14.jpg", "url15.jpg",
+    "url16.jpg", "url17.jpg", "url18.jpg", "url19.jpg", "url20.jpg"
+];
+
+
+        function addProblems() {
+            // Find the container in the HTML where problems will be added
+            var container = document.querySelector('.worksheet');
+
+            // Loop through the problems array and add each to the container
+            problems.forEach(function(problem, index) {
+                var problemDiv = document.createElement('div');
+                problemDiv.className = 'question';
+                problemDiv.innerHTML = '<img src="' + images[index] + '" alt="Graphical Element"><p>Problem: ' + problem + '</p>';
+                container.appendChild(problemDiv);
+            });
+        }
+
+        // Call addProblems on window load
+        window.onload = addProblems;
+    </script>
+</head>
+<body>
+    <div class="worksheet">
+        <h1>Fun with Numbers!</h1>
+        <p>Instructions: Solve the addition problems. Use the pictures to help you count!</p>
+
+        <!-- Problems will be added here by the JS script -->
+
+    </div>
+</body>
+</html>

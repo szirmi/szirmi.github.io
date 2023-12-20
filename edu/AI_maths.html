@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Math Worksheet - Robots</title>
+    <style>
+        .worksheet { text-align: center; }
+        .robot { height: 100px; }
+    </style>
+</head>
+<body>
+    <div class="worksheet">
+        <h2>Robot 10 More 10 Less</h2>
+        <div id="worksheet-content"></div>
+        <footer>
+            <p>www.wordunited.com</p>
+            <p>KS2 | Maths | KS2-MAT001</p>
+        </footer>
+    </div>
+
+    <script>
+        // SVG for a simple robot
+        const robotSVG = `
+            <svg class="robot" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                <!-- Body -->
+                <rect x="20" y="30" width="60" height="50" fill="#9c9c9c"/>
+                <!-- Head -->
+                <rect x="35" y="10" width="30" height="20" fill="#9c9c9c"/>
+                <!-- Eyes -->
+                <circle cx="45" cy="20" r="3" fill="#000"/>
+                <circle cx="55" cy="20" r="3" fill="#000"/>
+                <!-- Antenna -->
+                <line x1="50" y1="5" x2="50" y2="10" stroke="#000" stroke-width="2"/>
+            </svg>
+        `;
+
+        // Function to generate a row with a number and robot SVG
+        function generateNumberRow() {
+            const randomNumber = Math.floor(Math.random() * 89) + 10; // Random number between 10 and 99
+            return `
+                <div class="number-row">
+                    ${robotSVG}
+                    <span>${randomNumber}</span>
+                </div>
+            `;
+        }
+
+        // Function to generate the worksheet
+        function generateWorksheet() {
+            const worksheetContent = document.getElementById('worksheet-content');
+            worksheetContent.innerHTML = ''; // Clear previous content
+            for (let i = 0; i < 5; i++) { // Generate 5 rows
+                worksheetContent.innerHTML += generateNumberRow();
+            }
+        }
+
+        // Generate the worksheet when the script loads
+        generateWorksheet();
+    </script>
+</body>
+</html>

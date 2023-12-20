@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Reading Worksheet</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+    }
+    .container {
+        width: 80%;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .passage {
+        margin-bottom: 20px;
+    }
+    .question-section {
+        margin-bottom: 40px;
+    }
+    .question {
+        margin-bottom: 10px;
+        font-weight: bold;
+    }
+    .answers {
+        margin-left: 20px;
+        list-style-type: none;
+    }
+    .answer {
+        margin-bottom: 5px;
+    }
+    img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .instructions {
+        font-style: italic;
+        margin-bottom: 20px;
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Reading Comprehension Worksheet</h1>
+    <p class="instructions">Read the passage and answer the questions below.</p>
+    
+    <!-- Dynamic content will be added here -->
+    <div id="worksheetContent"></div>
+</div>
+<script>
+// Arrays to hold the examples for each passage
+var passages = [
+    "This is a bear looking at a beehive. The bear is curious about the bees.",
+    "A black cat is sitting on a windowsill, staring at the night sky.",
+    "Children are playing happily in the park. Some are on swings, others are sliding down a slide.",
+    "This is a sunny beach scene with a colorful umbrella and a sandcastle.",
+    "A colorful garden full of flowers and butterflies, with a small pond."
+];
+
+var questions = [
+    ["What is the bear doing?", "What color is the bear?", "What is in the tree?"],
+    ["What color are the cat's eyes?", "Where is the cat sitting?", "What can be seen through the window?"],
+    ["What are the children doing in the park?", "What can you see in the sky?", "Name two things the children are playing with."],
+    ["What can you find on the beach?", "What is the color of the umbrella?", "What is walking along the shore?"],
+    ["What can you find in the garden?", "Name two types of flowers in the garden.", "What is in the pond?"]
+];
+
+var answers = [
+    [["Looking at the beehive", "Climbing a tree", "Sleeping"], ["Brown", "Black", "White"], ["A beehive", "A nest", "Leaves"]],
+    [["Green", "Blue", "Yellow"], ["On the floor", "On the windowsill", "On the bed"], ["The night sky", "A garden", "A city"]],
+    [["Playing", "Sleeping", "Studying"], ["The sun", "The moon", "Birds"], ["Swing and slide", "Ball and kite", "Book and phone"]],
+    [["Umbrella and sandcastle", "Fish and ships", "Trees and benches"], ["Red", "Blue", "Yellow"], ["A crab", "A dog", "A bird"]],
+    [["Flowers and butterflies", "Fruits and vegetables", "Chairs and tables"], ["Roses and tulips", "Daisies and lilies", "Orchids and sunflowers"], ["A frog", "Fish", "Stones"]]
+];
+
+var images = [
+    "passage_bear.png",
+    "passage_cat.png",
+    "passage_playground.png",
+    "passage_beach.png",
+    "passage_garden.png"
+];
+
+// Function to dynamically add passages and questions
+function addContent() {
+    var contentDiv = document.getElementById('worksheetContent');
+
+    for (var i = 0; i < passages.length; i++) {
+        var passageDiv = document.createElement('div');
+        passageDiv.className = 'passage';
+        passageDiv.innerHTML = '<p>' + passages[i] + '</p><img src="' + images[i] + '" alt="Image for passage ' + (i + 1) + '">';
+
+        var questionsDiv = document.createElement('div');
+        questionsDiv.className = 'question-section';
+
+        questions[i].forEach(function(question, qIndex) {
+            var questionDiv = document.createElement('div');
+            questionDiv.className = 'question';
+            questionDiv.innerHTML = '<p>' + question + '</p>';
+
+            var answersList = document.createElement('ul');
+            answersList.className = 'answers';
+
+            answers[i][qIndex].forEach(function(answer) {
+                var answerDiv = document.createElement('li');
+                answerDiv.className = 'answer';
+                answerDiv.innerHTML = answer;
+                answersList.appendChild(answerDiv);
+            });
+
+            questionDiv.appendChild(answersList);
+            questionsDiv.appendChild(questionDiv);
+        });
+
+        contentDiv.appendChild(passageDiv);
+        contentDiv.appendChild(questionsDiv);
+    }
+}
+
+// Load the content when the document is ready
+document.addEventListener('DOMContentLoaded', addContent);
+</script>
+</body>
+</html>

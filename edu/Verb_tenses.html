@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Verb Tenses Worksheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section h2 {
+            color: #333399;
+        }
+        .instructions {
+            font-style: italic;
+            color: #555555;
+        }
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        th, td {
+            border: 1px solid black;
+            text-align: left;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        img {
+            max-width: 300px;
+            height: auto;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="worksheet">
+        <h1>Verb Tenses Worksheet</h1>
+
+        <div class="section" id="chartSection">
+            <h2>I. Complete the Chart</h2>
+            <p class="instructions">Write the correct tense form of the given verbs.</p>
+            <table id="verbChart">
+                <tr>
+                    <th>Tense</th>
+                    <th>Verb</th>
+                    <th>Correct Form</th>
+                </tr>
+                <!-- Rows will be added here -->
+            </table>
+        </div>
+
+        <div class="section" id="sentenceCompletionSection">
+            <h2>II. Sentence Completion</h2>
+            <p class="instructions">Fill in the blanks with the correct verb form.</p>
+            <ul id="sentenceCompletion">
+                <!-- Sentences will be added here -->
+            </ul>
+        </div>
+
+        <div class="section" id="pictureStudySection">
+            <h2>III. Picture Study</h2>
+            <p class="instructions">Describe and predict what is happening in the images.</p>
+            <div id="pictureStudy">
+                <!-- Images will be added here -->
+            </div>
+        </div>
+
+        <div class="section" id="paragraphWritingSection">
+            <h2>IV. Paragraph Writing</h2>
+            <p class="instructions">Write a paragraph on one of the following topics.</p>
+            <ul id="paragraphWriting">
+                <!-- Topics will be added here -->
+            </ul>
+        </div>
+
+    </div>
+
+    <script>
+        const verbChartExamples = [
+    ['Simple Present', 'Study', ''],
+    ['Simple Present', 'Dance', ''],
+    ['Simple Present', 'Write', ''],
+    ['Simple Past', 'Laughed', ''],
+    ['Simple Past', 'Jumped', ''],
+    ['Simple Past', 'Read', ''],
+    ['Present Progressive', 'Swimming', ''],
+    ['Present Progressive', 'Running', ''],
+    ['Present Progressive', 'Eating', ''],
+    ['Simple Future', 'Going to sleep / will sleep', '']
+];
+
+const sentenceCompletionExamples = [
+    'Every evening, my brother _____________ (play) video games.',
+    'We ____________ (travel) to London two years ago.',
+    'Sarah always ________________ (cook) delicious meals.',
+    'My cousin ____________ (paint) a scenic landscape yesterday.',
+    'They are ___________________ (not attend) the meeting tomorrow.',
+    'I ___________________ (explore) the mountains next summer.',
+    'Last weekend, we _______________(visit) the zoo.',
+    'Tom usually __________________ (choose) to wear casual clothes.',
+    'Kevin and Lucy ____________________ (not be) classmates.',
+    'The band ________________ (perform) wonderfully at the concert.'
+];
+
+const paragraphWritingTopics = [
+    'Describe a memorable event in your life.',
+    'Write about your favorite hobby or sport.',
+    'Discuss your daily routine.',
+    'Plan a dream vacation and describe what you will do.',
+    'Talk about your favorite book or movie.',
+    'Describe your best friend and why you are close.',
+    'Explain how you prepare for an important exam.',
+    'Discuss a historical event that interests you.',
+    'Write about an environmental issue that concerns you.',
+    'Describe a place you would love to visit and why.'
+];
+
+
+        const pictureStudyImages = [
+            'A_boy_painting_a_scenic_landscape,_focused_and_usi.png',
+            'A_group_of_children_playing_soccer_in_a_field_on_a.png',
+            'A_busy_street_scene_in_a_city_with_people_walking,.png'
+        ];
+
+        function addVerbChartExamples() {
+            const table = document.getElementById('verbChart');
+            verbChartExamples.forEach(example => {
+                const row = table.insertRow();
+                example.forEach(item => {
+                    const cell = row.insertCell();
+                    cell.textContent = item;
+                });
+            });
+        }
+
+        function addSentenceCompletionExamples() {
+            const list = document.getElementById('sentenceCompletion');
+            sentenceCompletionExamples.forEach(sentence => {
+                const listItem = document.createElement('li');
+                listItem.textContent = sentence;
+                list.appendChild(listItem);
+            });
+        }
+
+        function addPictureStudyImages() {
+            const container = document.getElementById('pictureStudy');
+            pictureStudyImages.forEach(image => {
+                const imgElement = document.createElement('img');
+                imgElement.src = image;
+                imgElement.alt = 'Picture Study Image';
+                container.appendChild(imgElement);
+            });
+        }
+
+        function addParagraphWritingTopics() {
+            const list = document.getElementById('paragraphWriting');
+            paragraphWritingTopics.forEach(topic => {
+                const listItem = document.createElement('li');
+                listItem.textContent = topic;
+                list.appendChild(listItem);
+            });
+        }
+
+        addVerbChartExamples();
+        addSentenceCompletionExamples();
+        addPictureStudyImages();
+        addParagraphWritingTopics();
+    </script>
+
+</body>
+</html>

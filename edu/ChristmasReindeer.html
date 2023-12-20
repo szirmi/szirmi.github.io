@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Mythical Creatures Profiles</title>
+    <style>
+        /* Add your CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .profile {
+            border: 1px solid #ddd;
+            margin-bottom: 20px;
+            padding: 10px;
+	    width: 25%;
+        }
+        .profile-image {
+            width: 100%;
+            height: auto;
+        }
+        .profile-details {
+            margin-top: 10px;
+        }
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Mythical Creatures Profiles</h1>
+        <p>Instructions: What do you know about these mythical creatures, find out with these profile cards.
+ </p> <!-- Add your instructions here -->
+
+        <!-- Example of a profile -->
+        <div class="profile">
+            <img src="placeholder.jpg" alt="Profile Image" class="profile-image">
+            <div class="profile-details">
+                <h2>Name: Placeholder</h2>
+                <p>Species: Placeholder</p>
+                <p>Personality: Placeholder</p>
+                <p>Skills: Placeholder</p>
+            </div>
+        </div>
+
+        <!-- Add more profiles here -->
+    </div>
+
+    <!-- Add your JavaScript here -->
+    <script>
+    // Arrays to hold profile data for each mythical creature
+var phoenixProfile = [{
+    name: 'Phoenix',
+    species: 'Mythical Bird',
+    personality: 'Resilient, Inspiring',
+    skills: 'Rebirth, Soaring Flight',
+    imageUrl: 'phoenix.png' // Replace with actual image URL
+}];
+
+var unicornProfile = [{
+    name: 'Unicorn',
+    species: 'Mythical Horse',
+    personality: 'Graceful, Pure',
+    skills: 'Healing Powers, Radiance',
+    imageUrl: 'unicorn.png' // Replace with actual image URL
+}];
+
+var dragonProfile = [{
+    name: 'Dragon',
+    species: 'Mythical Reptile',
+    personality: 'Wise, Powerful',
+    skills: 'Fire Breathing, Flying',
+    imageUrl: 'dragon.png' // Replace with actual image URL
+}];
+
+var mermaidProfile = [{
+    name: 'Mermaid',
+    species: 'Mythical Sea Creature',
+    personality: 'Mysterious, Enchanting',
+    skills: 'Singing, Ocean Navigation',
+    imageUrl: 'mermaid.png' // Replace with actual image URL
+}];
+
+var griffinProfile = [{
+    name: 'Griffin',
+    species: 'Mythical Lion-Eagle',
+    personality: 'Brave, Majestic',
+    skills: 'Guardian, Swift Flyer',
+    imageUrl: 'griffin.png' // Replace with actual image URL
+}];
+
+var centaurProfile = [{
+    name: 'Centaur',
+    species: 'Mythical Human-Horse',
+    personality: 'Intelligent, Strong',
+    skills: 'Archery, Speed',
+    imageUrl: 'centaur.png' // Replace with actual image URL
+}];
+
+var yetiProfile = [{
+    name: 'Yeti',
+    species: 'Mythical Snow Creature',
+    personality: 'Elusive, Strong',
+    skills: 'Mountain Climbing, Camouflage',
+    imageUrl: 'yeti.png' // Replace with actual image URL
+}];
+
+var gnomeProfile = [{
+    name: 'Gnome',
+    species: 'Mythical Earth Spirit',
+    personality: 'Crafty, Kind',
+    skills: 'Earth Magic, Stealth',
+    imageUrl: 'gnome.png' // Replace with actual image URL
+}];
+
+var elfProfile = [{
+    name: 'Elf',
+    species: 'Mythical Forest Dweller',
+    personality: 'Agile, Wise',
+    skills: 'Archery, Nature Magic',
+    imageUrl: 'elf.png' // Replace with actual image URL
+}];
+
+    // Function to add a profile to the HTML document
+    function addProfile(profileData) {
+        var container = document.querySelector('.container');
+
+        var profileDiv = document.createElement('div');
+        profileDiv.className = 'profile';
+
+        var img = document.createElement('img');
+        img.src = profileData.imageUrl || 'placeholder.jpg'; // Replace 'placeholder.jpg' with a default image if needed
+        img.alt = profileData.name + ' Image';
+        img.className = 'profile-image';
+
+        var detailsDiv = document.createElement('div');
+        detailsDiv.className = 'profile-details';
+
+        var name = document.createElement('h2');
+        name.textContent = 'Name: ' + profileData.name;
+
+        var species = document.createElement('p');
+        species.textContent = 'Species: ' + profileData.species;
+
+        var personality = document.createElement('p');
+        personality.textContent = 'Personality: ' + profileData.personality;
+
+        var skills = document.createElement('p');
+        skills.textContent = 'Skills: ' + profileData.skills;
+
+        detailsDiv.appendChild(name);
+        detailsDiv.appendChild(species);
+        detailsDiv.appendChild(personality);
+        detailsDiv.appendChild(skills);
+
+        profileDiv.appendChild(img);
+        profileDiv.appendChild(detailsDiv);
+
+        container.appendChild(profileDiv);
+    }
+
+    // Iterate over the arrays and add each profile
+    phoenixProfile.forEach(addProfile);
+    unicornProfile.forEach(addProfile);
+    dragonProfile.forEach(addProfile);
+    mermaidProfile.forEach(addProfile);
+    griffinProfile.forEach(addProfile);
+    centaurProfile.forEach(addProfile);
+    yetiProfile.forEach(addProfile);
+    gnomeProfile.forEach(addProfile);
+    elfProfile.forEach(addProfile);
+
+</script>
+
+</body>
+</html>

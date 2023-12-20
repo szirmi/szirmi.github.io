@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Math Worksheet - Robots</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .robot-image {
+            width: 100px;
+            height: 150px;
+            background-color: #f0f0f0; /* Placeholder color */
+            position: relative;
+            display: inline-block;
+        }
+        .number-container {
+            position: absolute;
+            text-align: center;
+            width: 100%;
+        }
+        .left-hand {
+            top: 50px;
+            left: -20px;
+        }
+        .right-hand {
+            top: 50px;
+            right: -20px;
+        }
+        .stomach {
+            top: 70px;
+        }
+        .exercise {
+            margin-bottom: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Math Worksheet - Robots</h1>
+        
+        <!-- Exercise Sections -->
+        <!-- Placeholder for exercises, will be filled by JavaScript -->
+
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const exercises = [
+        // Exercise 1: Find 10 More or 10 Less
+        {
+            title: "Exercise 1: Find 10 More or 10 Less",
+            instructions: "Work out 10 more and 10 less than the robot’s number.",
+            numbers: [] // Add the numbers for this exercise here
+        },
+        // Exercise 2: Complete the Table
+        {
+            title: "Exercise 2: Complete the Table",
+            instructions: "Find 10 more or 10 less to complete the missing numbers.",
+            numbers: [] // Add the numbers for this exercise here
+        },
+        // Exercise 3: Create Your Own Robot
+        {
+            title: "Exercise 3: Create Your Own Robot",
+            instructions: "Choose a number and find 10 more or 10 less than your robot’s number.",
+            numbers: [] // Add the numbers for this exercise here
+        }
+    ];
+
+    // Function to create a robot image element
+    function createRobotImage(number) {
+        const robot = document.createElement('div');
+        robot.className = 'robot-image';
+
+        // Creating number containers for left hand, right hand, and stomach
+        ['left-hand', 'right-hand', 'stomach'].forEach(position => {
+            const numberContainer = document.createElement('div');
+            numberContainer.className = `number-container ${position}`;
+            numberContainer.textContent = number[position]; // Assign the number to the correct position
+            robot.appendChild(numberContainer);
+        });
+
+        return robot;
+    }
+
+    // Function to create and append exercises
+    function createExercise(exercise) {
+        const exerciseContainer = document.createElement('div');
+        exerciseContainer.className = 'exercise';
+
+        const title = document.createElement('h2');
+        title.textContent = exercise.title;
+        exerciseContainer.appendChild(title);
+
+        const instructions = document.createElement('div');
+        instructions.className = 'instructions';
+        instructions.textContent = exercise.instructions;
+        exerciseContainer.appendChild(instructions);
+
+        const robotSection = document.createElement('div');
+        exercise.numbers.forEach(number => {
+            robotSection.appendChild(createRobotImage(number));
+        });
+        exerciseContainer.appendChild(robotSection);
+
+        document.querySelector('.container').appendChild(exerciseContainer);
+    }
+
+    // Create and append each exercise
+    exercises.forEach(createExercise);
+});
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Magnetic and Non-Magnetic Sorting Activity</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .instructions {
+            margin-bottom: 20px;
+        }
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+        .activity-section {
+            text-align: center;
+            border: 1px solid #ddd;
+            padding: 10px;
+        }
+        .placeholder {
+            width: 100px;
+            height: 100px;
+            background-color: #eee;
+            display: inline-block;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Magnetic and Non-Magnetic Sorting Activity</h1>
+        </div>
+        <div class="instructions">
+            <p><strong>Objective:</strong> Sort the objects into the correct categories: Magnetic or Non-Magnetic.</p>
+            <p><strong>Instructions:</strong> Cut and stick each object in the correct circle.</p>
+        </div>
+        <div class="activity-grid">
+<div class="activity-section" id="sorting-area">
+    <h2>Objects to Sort</h2>
+</div>
+<div class="activity-section" id="magnetic-section">
+    <h2>Magnetic</h2>
+</div>
+<div class="activity-section" id="non-magnetic-section">
+    <h2>Non-Magnetic</h2>
+</div>
+        </div>
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Array to store examples of objects to be sorted
+var objectsToSort = [
+    "Paperclip", "Iron Nail", "Horseshoe Magnet", "Steel Spoon", "Nickel Coin",
+    "Plastic Ruler", "Wooden Pencil", "Glass Marble", "Rubber Ball", "Cotton Cloth",
+    "Stainless Steel Fork", "Aluminum Can", "Copper Wire", "Brass Key", "Lead Pipe",
+    "Gold Ring", "Silver Necklace", "Ceramic Mug", "Silk Scarf", "Woolen Socks"
+];
+
+
+    // Function to add objects to the sorting area
+    function addObjectsToSortingArea(objects, containerId) {
+        var container = document.getElementById(containerId);
+        objects.forEach(function(object) {
+            var placeholder = document.createElement('div');
+            placeholder.className = 'placeholder';
+            placeholder.textContent = object; // Replace with an image or other element as needed
+            container.appendChild(placeholder);
+        });
+    }
+
+    // Add objects to the sorting area
+    addObjectsToSortingArea(objectsToSort, 'sorting-area');
+});
+</script>
+</body>
+</html>
