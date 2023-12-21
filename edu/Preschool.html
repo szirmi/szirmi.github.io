@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preschool Worksheet</title>
+    <style>
+        /* Add CSS styles here */
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .worksheet-container {
+            width: 80%;
+            margin: auto;
+        }
+        .activity {
+            margin-bottom: 20px;
+        }
+        .activity-title {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        /* Add more styles as needed */
+    </style>
+</head>
+<body>
+    <div class="worksheet-container">
+        <!-- Trace the Words -->
+        <div class="activity trace-words">
+            <div class="activity-title">Trace the Words</div>
+            <!-- Image placeholders will go here -->
+        </div>
+
+        <!-- Complete the Sentences -->
+        <div class="activity complete-sentences">
+            <div class="activity-title">Complete the Sentences</div>
+            <!-- Sentence placeholders will go here -->
+        </div>
+
+        <!-- Missing Letter Exercise -->
+        <div class="activity missing-letter">
+            <div class="activity-title">Missing Letter Exercise</div>
+            <!-- Image and word placeholders will go here -->
+        </div>
+
+        <!-- Patterns Recognition -->
+        <div class="activity pattern-recognition">
+            <div class="activity-title">Pattern Recognition</div>
+            <!-- Pattern examples will go here -->
+        </div>
+
+        <!-- Beginning Sounds Activity -->
+        <div class="activity beginning-sounds">
+            <div class="activity-title">Beginning Sounds</div>
+            <!-- Sound and image placeholders will go here -->
+        </div>
+
+        <!-- Matter Changes Puzzle -->
+        <div class="activity matter-changes">
+            <div class="activity-title">Matter Changes</div>
+            <!-- Image placeholders will go here -->
+        </div>
+
+<!-- Daily Check-In -->
+        <div class="activity daily-checkin">
+            <div class="activity-title">Daily Check-In</div>
+            <!-- Elements for day, weather, feelings will go here -->
+        </div>
+
+        <!-- Object Identification -->
+        <div class="activity object-identification">
+            <div class="activity-title">Object Identification</div>
+            <!-- Image placeholders for objects will go here -->
+        </div>
+
+        <!-- Letter Unscrambling -->
+        <div class="activity letter-unscrambling">
+            <div class="activity-title">Letter Unscrambling</div>
+            <!-- Word placeholders will go here -->
+        </div>
+
+        <!-- Time Reading Exercise -->
+        <div class="activity time-reading">
+            <div class="activity-title">Time Reading</div>
+            <!-- Clock image placeholders will go here -->
+        </div>
+
+        <!-- Dental Health -->
+        <div class="activity dental-health">
+            <div class="activity-title">Dental Health</div>
+            <!-- Image placeholders for food and drinks will go here -->
+        </div>
+
+        <!-- Number Writing -->
+        <div class="activity number-writing">
+            <div class="activity-title">Number Writing</div>
+            <!-- Placeholders for number sequences will go here -->
+        </div>
+
+        <!-- Weather Matching -->
+        <div class="activity weather-matching">
+            <div class="activity-title">Weather Matching</div>
+            <!-- Image placeholders for clothing items and weather types will go here -->
+        </div>
+
+        <!-- Shape and Object Matching -->
+        <div class="activity shape-object-matching">
+            <div class="activity-title">Shape and Object Matching</div>
+            <!-- Placeholders for objects and shapes will go here -->
+        </div>
+
+        <!-- Counting and Identifying Fruits -->
+        <div class="activity counting-fruits">
+            <div class="activity-title">Counting and Identifying Fruits</div>
+            <!-- Image placeholders for fruits will go here -->
+        </div>
+
+        <!-- More activities can be added as needed... -->
+
+    </div>
+<script>
+    // Arrays for each assignment
+    // Array for 'Trace the Words'
+var traceWordsExamples = [
+    { image: 'apple_image.png', word: 'Apple' }
+    // Add more examples here
+];
+
+// Array for 'Complete the Sentences'
+var completeSentencesExamples = [
+    "The cat is very _____.",
+    "I like to eat _____."
+    // Add more examples here
+];
+
+// Array for 'Missing Letter Exercise'
+var missingLetterExamples = [
+    { image: 'cat_image.png', word: 'C_t' },
+    { image: 'dog_image.png', word: 'D_g' }
+    // Add more examples here
+];
+
+// Array for 'Pattern Recognition'
+var patternRecognitionExamples = [
+    "Star, Circle, Star, Circle, _____",
+    "Red, Red, Blue, Red, Red, _____"
+    // Add more examples here
+];
+
+// Similar arrays for other activities...
+
+// Array for 'Daily Check-In'
+var dailyCheckinExamples = [
+    { day: 'Monday', weather: 'Sunny', feeling: 'Happy' },
+    { day: 'Tuesday', weather: 'Rainy', feeling: 'Sad' }
+    // Add more examples here
+];
+
+// Similar arrays for other activities...
+
+    var beginningSoundsExamples = []; // Fill with {image: 'url', sound: 'initial sound'}
+    var matterChangesExamples = []; // Fill with {image: 'url', change: 'description'}
+var dailyCheckinExamples = [
+    { day: 'Monday', weather: 'Sunny', feeling: 'Happy' },
+    { day: 'Tuesday', weather: 'Rainy', feeling: 'Sad' }
+    // Add more examples here
+];
+
+    var objectIdentificationExamples = []; // Fill with {image: 'url', objectName: 'name'}
+    var letterUnscramblingExamples = []; // Fill with scrambled words
+    var timeReadingExamples = []; // Fill with {digital: 'time', analog: 'url'}
+    var dentalHealthExamples = []; // Fill with {image: 'url', category: 'healthy/unhealthy'}
+    var numberWritingExamples = []; // Fill with number sequences
+    var weatherMatchingExamples = []; // Fill with {clothing: 'url', weather: 'weather type'}
+    var shapeObjectMatchingExamples = []; // Fill with {object: 'url', shape: 'shape'}
+    var countingFruitsExamples = []; // Fill with {image: 'url', count: 'number'}
+
+    // Functions to populate content
+    function populateTraceWords() {
+        var container = document.querySelector('.trace-words');
+        traceWordsExamples.forEach(function(item) {
+            var imgElement = document.createElement('img');
+            imgElement.src = item.image;
+            var wordElement = document.createTextNode(item.word);
+            container.appendChild(imgElement);
+            container.appendChild(wordElement);
+        });
+    }
+// Function to populate 'Complete the Sentences'
+    function populateCompleteSentences() {
+        var container = document.querySelector('.complete-sentences');
+        completeSentencesExamples.forEach(function(sentence) {
+            var sentenceElement = document.createElement('p');
+            sentenceElement.textContent = sentence;
+            container.appendChild(sentenceElement);
+        });
+    }
+
+    // Function to populate 'Missing Letter Exercise'
+    function populateMissingLetters() {
+        var container = document.querySelector('.missing-letter');
+        missingLetterExamples.forEach(function(item) {
+            var imgElement = document.createElement('img');
+            imgElement.src = item.image;
+            var wordElement = document.createElement('span');
+            wordElement.textContent = item.word;
+            container.appendChild(imgElement);
+            container.appendChild(wordElement);
+        });
+    }
+
+    // Function to populate 'Pattern Recognition'
+    function populatePatternRecognition() {
+        var container = document.querySelector('.pattern-recognition');
+        patternRecognitionExamples.forEach(function(pattern) {
+            var patternElement = document.createElement('p');
+            patternElement.textContent = pattern;
+            container.appendChild(patternElement);
+        });
+    }
+
+    // Function to populate 'Daily Check-In'
+    function populateDailyCheckin() {
+        var container = document.querySelector('.daily-checkin');
+        dailyCheckinExamples.forEach(function(item) {
+            var dayElement = document.createElement('p');
+            dayElement.textContent = "Day: " + item.day;
+            var weatherElement = document.createElement('p');
+            weatherElement.textContent = "Weather: " + item.weather;
+            var feelingElement = document.createElement('p');
+            feelingElement.textContent = "Feeling: " + item.feeling;
+            container.appendChild(dayElement);
+            container.appendChild(weatherElement);
+            container.appendChild(feelingElement);
+        });
+    }
+
+    // Similar functions for other activities...
+    // populateCompleteSentences(), populateMissingLetter(), etc.
+
+    // Function to initialize all activities
+    function initializeWorksheet() {
+        populateTraceWords();
+        populateCompleteSentences();
+        populateMissingLetters();
+        populatePatternRecognition();
+        populateDailyCheckin();
+        
+        // Call other populate functions here...
+        // populateCompleteSentences(), populateMissingLetter(), etc.
+    }
+
+    // Call initializeWorksheet() when the document is loaded
+    document.addEventListener('DOMContentLoaded', initializeWorksheet);
+</script>
+
+</body>
+</html>

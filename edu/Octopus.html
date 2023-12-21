@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sea Turtle Life Cycle Unit</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .section {
+            margin-bottom: 20px;
+        }
+        .section-title {
+            font-weight: bold;
+        }
+        .image-placeholder {
+            width: 100px;
+            height: 100px;
+            background-color: #e0e0e0;
+            text-align: center;
+            line-height: 100px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="section life-cycle-description">
+        <div class="section-title">Life Cycle of a Sea Turtle</div>
+        <!-- Placeholder for life cycle descriptions -->
+    </div>
+
+    <div class="section sea-turtle-description">
+        <div class="section-title">What is a Sea Turtle?</div>
+        <!-- Placeholder for description -->
+    </div>
+
+    <div class="section life-cycle-order">
+        <div class="section-title">Order of the Sea Turtle Life Cycle</div>
+        <!-- Placeholder for order activity -->
+    </div>
+
+    <div class="section label-parts">
+        <div class="section-title">Label the Parts of a Sea Turtle</div>
+        <div class="image-placeholder">Diagram Placeholder</div>
+    </div>
+
+    <div class="section matching-stages">
+        <div class="section-title">Match the Life Cycle Stages</div>
+        <!-- Placeholder for matching activity -->
+    </div>
+
+    <div class="section trace-word">
+        <div class="section-title">Trace the Word</div>
+        <!-- Placeholder for word tracing activity -->
+    </div>
+
+    <div class="section recording-sheet">
+        <div class="section-title">Write the Room Recording Sheet</div>
+        <!-- Placeholder for scavenger hunt activity -->
+    </div>
+
+    <div class="section word-wall">
+        <div class="section-title">Word Wall</div>
+        <!-- Placeholder for word wall -->
+    </div>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Arrays to hold examples for each assignment
+    var lifeCycleDescriptions = [
+        'Sea turtles lay their eggs on sandy beaches. Each nest contains about 100 eggs.',
+        'Hatchlings emerge from their eggs and scurry to the ocean under the cover of night.',
+        'Juvenile sea turtles grow in the open ocean, eating a variety of food.',
+        'Adult sea turtles travel long distances to feed and mate. They can live up to 80 years.'
+    ];
+
+    var seaTurtleDescription = [
+        'Sea turtles are large, air-breathing reptiles with streamlined bodies and large flippers. They inhabit tropical and subtropical ocean waters.'
+    ];
+
+    var lifeCycleOrder = [
+        'Egg', 'Hatchling', 'Juvenile', 'Adult'
+    ];
+
+    var labelPartsExamples = [
+        // URL for a sea turtle diagram (placeholder)
+    ];
+
+    var matchingStagesExamples = [
+        { 'stage': 'Egg', 'imageUrl': 'turtle_0.png' },
+        { 'stage': 'Hatchling', 'imageUrl': 'turtle_1.png' },
+        { 'stage': 'Juvenile', 'imageUrl': 'turtle_2.png' },
+        { 'stage': 'Adult', 'imageUrl': 'turtle_3.png' }
+    ];
+
+    var traceWordExamples = [
+        'Egg', 'Hatchling', 'Juvenile', 'Adult', 'Sea Turtle', 'Ocean'
+    ];
+
+    var recordingSheetExamples = [
+        // Placeholder for scavenger hunt items
+    ];
+
+    var wordWallExamples = [
+        'Nest', 'Migration', 'Conservation', 'Habitat', 'Predator'
+    ];
+
+    // Function to add content to a section
+    function addContentToSection(sectionClass, contentArray) {
+        var section = document.querySelector('.' + sectionClass);
+        contentArray.forEach(function(content) {
+            if (typeof content === 'object') {
+                var img = document.createElement('img');
+                img.src = content.imageUrl;
+                img.alt = content.stage;
+                section.appendChild(img);
+            } else {
+                var p = document.createElement('p');
+                p.textContent = content;
+                section.appendChild(p);
+            }
+        });
+    }
+
+    // Adding content to each section
+    addContentToSection('life-cycle-description', lifeCycleDescriptions);
+    addContentToSection('sea-turtle-description', seaTurtleDescription);
+    addContentToSection('life-cycle-order', lifeCycleOrder);
+    addContentToSection('label-parts', labelPartsExamples);
+    addContentToSection('matching-stages', matchingStagesExamples);
+    addContentToSection('trace-word', traceWordExamples);
+    addContentToSection('recording-sheet', recordingSheetExamples);
+    addContentToSection('word-wall', wordWallExamples);
+});
+
+</script>
+</body>
+</html>

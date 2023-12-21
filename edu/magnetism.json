@@ -1,0 +1,40 @@
+{
+  "metadata": {
+    "origin_filename": "9 - 11 Science - 7.pdf",
+    "classification_labels": ["Science", "KS2"],
+    "grade": "9-11",
+    "age_group": "9-11 years",
+    "country": "United Kingdom",
+    "subject": "Science",
+    "activity_code": "KS2-SCI005"
+  },
+  "activities": [
+    {
+      "type": "Sorting Activity",
+      "description": "Magnetic and Non-Magnetic Sorting",
+      "assignments": [
+        {
+          "title": "Magnetic or Non-Magnetic Sorting",
+          "instructions": "Cut and stick each object in the correct circle - Magnetic or Non-Magnetic.",
+          "examples": [
+            {"example_1": "Iron nail", "category": "Magnetic"},
+            {"example_2": "Plastic spoon", "category": "Non-Magnetic"},
+            {"example_3": "Copper coin", "category": "Non-Magnetic"},
+            {"example_4": "Steel paperclip", "category": "Magnetic"},
+            {"example_5": "Aluminum can", "category": "Non-Magnetic"},
+            {"example_6": "Magnet", "category": "Magnetic"},
+            {"example_7": "Wooden pencil", "category": "Non-Magnetic"},
+            {"example_8": "Stainless steel spoon", "category": "Non-Magnetic"},
+            {"example_9": "Nickel coin", "category": "Magnetic"},
+            {"example_10": "Rubber eraser", "category": "Non-Magnetic"}
+          ],
+          "image_identifiers": ["image_1", "image_2"]
+        }
+      ]
+    }
+  ],
+  "image_prompts": {
+    "image_1": "Create an illustration of a worksheet with various objects for students to classify as magnetic or non-magnetic.",
+    "image_2": "Design a diagram showing two circles labeled 'Magnetic' and 'Non-Magnetic' with space for objects to be placed in each category."
+  }
+}

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fruit Tracing Worksheet</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .worksheet-container {
+            width: 80%;
+            margin: auto;
+        }
+        .fruit-tracing {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            text-align: center;
+        }
+        .fruit-tracing img {
+            width: 100%;
+            max-width: 200px;
+            height: auto;
+        }
+        .dashed {
+            letter-spacing: 2px;
+            border-bottom: 1px dashed;
+        }
+    </style>
+</head>
+<body>
+    <div class="worksheet-container">
+        <div class="fruit-tracing">
+            <!-- Fruits will be dynamically added here -->
+        </div>
+    </div>
+
+    <script>
+var fruitTracingExamples = [
+    { image: 'pineapple_image.png', name: 'Pineapple' },
+    { image: 'mango_image.png', name: 'Mango' },
+    { image: 'grapes_image.png', name: 'Grapes' },
+    { image: 'orange_image.png', name: 'Orange' },
+    { image: 'strawberry_image.png', name: 'Strawberry' },
+    { image: 'blueberry_image.png', name: 'Blueberry', dashed: true }
+    // Add more examples if needed
+];
+
+function populateFruitTracing() {
+    var container = document.querySelector('.fruit-tracing');
+    fruitTracingExamples.forEach(function(fruit) {
+        var fruitDiv = document.createElement('div');
+        var imgElement = document.createElement('img');
+        imgElement.src = fruit.image;
+        fruitDiv.appendChild(imgElement);
+
+        var nameElement;
+        if (fruit.dashed) {
+            //nameElement = document.createElement('span');
+            //nameElement.textContent = fruit.name.split('').join(' ');
+            //nameElement.className = 'dashed';
+            nameElement = document.createElement('canvas');
+            nameElement.id = 'tracingCanvas';
+            nameElement.width = 400;
+            nameElement.height = 100;
+            const ctx = nameElement.getContext('2d');
+            drawDashedText(ctx, 'Blueberry', 10, 50);
+        } else {
+            nameElement = document.createElement('p');
+            nameElement.textContent = fruit.name;
+        }
+        fruitDiv.appendChild(nameElement);
+        container.appendChild(fruitDiv);
+    });
+}
+
+// Function to draw dashed text
+    function drawDashedText(ctx, text, x, y, dashLength = 10) {
+        ctx.font = '30px Arial';
+        for (let i = 0; i < text.length; i++) {
+            ctx.fillText(text[i], x, y);
+            x += ctx.measureText(text[i]).width + dashLength;
+        }
+    }
+
+
+document.addEventListener('DOMContentLoaded', populateFruitTracing);
+
+    </script>
+</body>
+</html>

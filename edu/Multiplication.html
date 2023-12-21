@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Multiplication Worksheet</title>
+    <style>
+        .worksheet {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+        }
+        .problem-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 20px;
+        }
+        .problem {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid black;
+            padding: 15px;
+            font-size: large;
+        }
+        .number {
+            margin: 5px 0;
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+    <div class="worksheet">
+        <h1>Multiplication Practice</h1>
+        <div id="problems" class="problem-grid">
+            <!-- Problems will be added here dynamically -->
+        </div>
+    </div>
+
+    <script>
+document.addEventListener("DOMContentLoaded", function() {
+    const problemContainer = document.getElementById('problems');
+    const multiplicationProblems = generateProblems(20); // Generating 20 problems
+
+    function generateProblems(count) {
+        const problems = [];
+        for (let i = 0; i < count; i++) {
+            const number1 = Math.floor(Math.random() * 10) + 1;
+            const number2 = Math.floor(Math.random() * 10) + 1;
+            problems.push({ number1, number2 });
+        }
+        return problems;
+    }
+
+    function createProblemElement(problem, index) {
+        const problemDiv = document.createElement('div');
+        problemDiv.classList.add('problem');
+        problemDiv.innerHTML = `<div class="number">${index + 1}) ${problem.number1}</div>
+                                <div class="number">x ${problem.number2}</div>`;
+        return problemDiv;
+    }
+
+    multiplicationProblems.forEach((problem, index) => {
+        problemContainer.appendChild(createProblemElement(problem, index));
+    });
+});
+
+</script>
+</body>
+</html>
